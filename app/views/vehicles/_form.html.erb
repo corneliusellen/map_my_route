@@ -1,0 +1,18 @@
+<%= form_for @vehicle do |f| %>
+  <%= f.label "Make: " %>
+  <%= f.text_field :make %>
+
+  <%= f.label "Model: " %>
+  <%= f.text_field :model %>
+
+  <%= f.label "Year: " %>
+  <%= f.number_field :year %>
+
+  <%= f.label "Average MPG: " %>
+  <%= f.number_field :mpg %>
+
+  <%= f.label "Fuel Type: " %>
+  <%= f.text_field :fuel %>
+
+  <%= f.submit %>
+<% end %>
