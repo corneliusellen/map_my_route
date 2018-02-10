@@ -3,12 +3,25 @@
   <head>
     <title>MapMyRoute</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag    'reset', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <header>
+      <div class="login">
+        <p>Login</p>
+      </div>
+      <nav>
+        <ul>
+          <li>My Vehicles</li>
+          <li>My Stations</li>
+          <li>My Routes</li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
