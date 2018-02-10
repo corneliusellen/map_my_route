@@ -6,12 +6,11 @@ describe "user can create new vehicle" do
       scenario "user sees index page with new vehicle" do
         visit new_vehicle_path
 
-        fill_in('Nickname', with: 'Shauna')
         fill_in('Make', with: 'Chevy')
         fill_in('Model', with: 'Bolt')
         fill_in('Year', with: 2017)
-        fill_in('MPG', with: 45)
-        fill_in('Fuel Type', with: 'electric')
+        fill_in('Mpg', with: 45)
+        fill_in('Fuel', with: 'electric')
         click_button('Create')
 
         expect(current_path).to eq(vehicles_path)
