@@ -14,7 +14,7 @@ describe "user can create new vehicle" do
         click_button('Create')
 
         expect(current_path).to eq(vehicles_path)
-        expect(page).to have_content("Shauna")
+        expect(page).to have_content("Chevy")
         expect(page).to have_content("electric")
         expect(Vehicle.all.count).to eq(1)
       end
