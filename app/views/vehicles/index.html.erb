@@ -13,7 +13,7 @@
         <p>Fuel Type: <%= vehicle.fuel %></p>
         <div class="button-container">
           <%= link_to("Edit", edit_vehicle_path(vehicle), class: "button") %>
-          <%= link_to("Delete", vehicle_path(vehicle), class: "button") %>
+          <%= link_to("Delete", vehicle_path(vehicle), class: "button", method: "delete") %>
       </div>
     </article>
   <% end %>

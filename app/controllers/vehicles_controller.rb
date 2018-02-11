@@ -34,6 +34,11 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def destroy
+    Vehicle.find(params[:id]).destroy
+    redirect_to vehicles_path
+  end
+
   private
 
   def vehicle_params
