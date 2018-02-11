@@ -7,15 +7,14 @@ describe "user can edit a vehicle" do
 
       visit vehicles_path
       click_on "Edit"
-
       expect(current_path).to eq(edit_vehicle_path(vehicle))
 
-      fill_in("Year", with: 2018)
-      click_link "Update"
+      fill_in("Model", with: "Volt")
+      click_button('Update')
 
       expect(current_path).to eq(vehicle_path(vehicle))
-      expect(page).to have_content("2018")
-      expect(page).to_not have_content("2017")
+      expect(page).to have_content("Volt")
+      expect(page).to_not have_content("Bolt")
     end
   end
 end
