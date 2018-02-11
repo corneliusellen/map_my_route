@@ -69,14 +69,15 @@ nav {
 
 .button-container {
   display: flex;
+}
 
-  .button {
-    margin-top: 10px;
-    margin-right: 20px;
-    padding: 10px;
-    background-color: $color3;
-    color: $color1;
-  }
+.button {
+  margin-top: 10px;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: $color3;
+  color: $color1;
+  border-radius: 5%;
 }
 
 .button:link {
@@ -88,6 +89,11 @@ nav {
 .button:active {
   background-color: $color4;
   color: $color3;
+}
+
+.new {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .header-title {
@@ -137,6 +143,8 @@ nav {
   flex-wrap: wrap;
 
   .each-car {
+    margin: 10px;
+
     p {
       padding: 5px;
     }

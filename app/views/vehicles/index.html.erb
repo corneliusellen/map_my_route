@@ -2,6 +2,10 @@
   <h2>My Vehicles (<%= Vehicle.count %>)</h2>
 </section>
 
+<section class="new">
+  <%= link_to("Add New Vehicle", new_vehicle_path, class: "button") %>
+</section>
+
 <section class="car-index">
 
   <% @vehicles.each do |vehicle| %>
