@@ -1,0 +1,22 @@
+<section class="header-title">
+  <h2>Information for: <%= @vehicle.make %> <%= @vehicle.model %></h2>
+</section>
+
+<section class="two-column">
+
+  <article class="car">
+    <img src="https://di-uploads-pod4.dealerinspire.com/sunrisechevy/uploads/2015/11/2017-Chevrolet-Bolt.png" alt="Chevy Bolt">
+  </article>
+
+  <article class="info">
+    <p>Vehicle Make: <%= @vehicle.make %></p>
+    <p>Vehicle Model: <%= @vehicle.model %></p>
+    <p>Vehicle Year: <%= @vehicle.year %></p>
+    <p>Average MPG: <%= @vehicle.mpg %></p>
+    <p>Fuel Type: <%= @vehicle.fuel %></p>
+    <div class="button-container">
+      <%= link_to("Find Fuel Stations", vehicles_path, class: "button") %>
+    </div>
+  </article>
+
+</section>
