@@ -12,10 +12,10 @@ describe "when user logs in" do
     click_on("Create My Account")
 
     expect(current_path).to eq(user_path(User.last))
-    expect(page).to have_content("Welcome, dogzlover!")
+    expect(page).to have_content("Welcome dogzlover!")
     expect(page).to have_content("Add Vehicle")
     expect(page).to have_content("Add Station")
     expect(page).to have_content("Create Route")
     expect(page).to have_content("Sign Out")
   end
-end 
+end
