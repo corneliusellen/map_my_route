@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "when user logs in" do
-  it "sees their personal info" do
+  it "sees her personal info" do
     visit '/'
 
     click_on "Create Account"
@@ -9,7 +9,7 @@ describe "when user logs in" do
 
     fill_in("user[username]", with: "dogzlover")
     fill_in("user[password]", with: "123password")
-    click_on("Create User")
+    click_on("Create Account")
 
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome dogzlover!")
