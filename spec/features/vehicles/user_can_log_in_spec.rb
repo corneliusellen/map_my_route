@@ -7,9 +7,9 @@ describe "when user logs in" do
     click_on "Create Account"
     expect(current_path).to eq(new_user_path)
 
-    fill_in("Username", with: "dogzlover")
-    fill_in("Password", with: "123password")
-    click_on("Create My Account")
+    fill_in("user[username]", with: "dogzlover")
+    fill_in("user[password]", with: "123password")
+    click_on("Create User")
 
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome dogzlover!")
