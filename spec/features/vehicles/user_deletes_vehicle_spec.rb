@@ -13,8 +13,8 @@ describe "user can delete a vehicle" do
       click_on("Login")
 
       visit vehicles_path
-      within("##{vehicle.id}") do
-        click_link("delete")
+      within(".button-container") do
+        click_link("Delete")
       end
 
       expect(current_path).to eq(vehicles_path)
