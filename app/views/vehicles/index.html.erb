@@ -8,7 +8,7 @@
 
 <section class="car-index">
 
-  <% @vehicles.each do |vehicle| %>
+  <% current_user.vehicles.each do |vehicle| %>
     <article class="each-car">
       <%= link_to(vehicle_path(vehicle), id: vehicle.id) do %>
         <img src="https://di-uploads-pod4.dealerinspire.com/sunrisechevy/uploads/2015/11/2017-Chevrolet-Bolt.png" alt="Chevy Bolt">

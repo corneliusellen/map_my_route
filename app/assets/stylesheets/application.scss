@@ -40,6 +40,7 @@ nav {
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
   }
 
@@ -49,6 +50,7 @@ nav {
     padding: 10px;
     background-color: $color4;
     text-align: center;
+    min-width: 200px;
   }
 
   li:hover {
