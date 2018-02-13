@@ -4,6 +4,13 @@ describe "user can create new vehicle" do
   describe "user links from root page" do
     context "user fills in car info and clicks submit" do
       scenario "user sees index page with new vehicle" do
+        user = User.create(username: "dogzlover", password: "123")
+        visit '/'
+        click_on "Sign In"
+        fill_in("Username", with: "dogzlover")
+        fill_in("Password", with: "123")
+        click_on("Login")
+
         visit new_vehicle_path
 
         fill_in('Make', with: 'Chevy')

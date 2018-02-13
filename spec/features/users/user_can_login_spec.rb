@@ -18,6 +18,6 @@ describe "when a user logs in" do
     expect(page).to have_content("Add Vehicle")
     expect(page).to have_content("Add Station")
     expect(page).to have_content("Create Route")
-    expect(page).to have_content("Sign Out")
+    expect(page).to have_content("Logout")
   end
 end
