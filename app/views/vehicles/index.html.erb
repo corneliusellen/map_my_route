@@ -1,0 +1,27 @@
+<%= render "../views/navigation" %>
+
+<section class="header-title">
+  <h2>My Vehicles (<%= Vehicle.count %>)</h2>
+</section>
+
+<section class="new">
+  <%= link_to("Add New Vehicle", new_vehicle_path, class: "button") %>
+</section>
+
+<section class="car-index">
+
+  <% current_user.vehicles.each do |vehicle| %>
+    <article class="each-car">
+      <%= link_to(vehicle_path(vehicle), id: vehicle.id) do %>
+        <img src="https://di-uploads-pod4.dealerinspire.com/sunrisechevy/uploads/2015/11/2017-Chevrolet-Bolt.png" alt="Chevy Bolt">
+        <% end %>
+        <p>Vehicle Make: <%= vehicle.make %></p>
+        <p>Fuel Type: <%= vehicle.fuel %></p>
+        <div class="button-container">
+          <%= link_to("Edit", edit_vehicle_path(vehicle), class: "button") %>
+          <%= link_to("Delete", vehicle_path(vehicle), class: "button", method: "delete") %>
+      </div>
+    </article>
+  <% end %>
+
+</section>

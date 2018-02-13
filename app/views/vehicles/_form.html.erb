@@ -1,17 +1,17 @@
 <%= form_for @vehicle do |f| %>
-  <%= f.label "Make: " %>
+  <%= f.label :make %>
   <%= f.text_field :make %>
 
-  <%= f.label "Model: " %>
+  <%= f.label :model %>
   <%= f.text_field :model %>
 
-  <%= f.label "Year: " %>
+  <%= f.label :year %>
   <%= f.number_field :year %>
 
-  <%= f.label "Average MPG: " %>
+  <%= f.label :mpg %>
   <%= f.number_field :mpg %>
 
-  <%= f.label "Fuel Type: " %>
+  <%= f.label :fuel %>
   <%= f.text_field :fuel %>
 
   <%= f.submit %>
