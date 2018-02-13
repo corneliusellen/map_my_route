@@ -10,19 +10,6 @@
   </head>
 
   <body>
-    <header>
-      <div class="logout">
-        <%= link_to "Logout", logout_path, method: "delete" %>
-      </div>
-      <nav>
-        <ul>
-          <li><%= link_to vehicles_path do %>
-          <div>My Vehicles</div><% end %></li>
-          <li>My Stations</li>
-          <li>My Routes</li>
-        </ul>
-      </nav>
-    </header>
     <%= yield %>
   </body>
 </html>

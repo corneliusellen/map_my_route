@@ -184,6 +184,7 @@ nav {
   }
     .welcome-banner {
       background: url("https://s1.cdn.autoevolution.com/images/news/manic-for-organic-a-guide-to-alternative-fuels-1879_1.jpg") no-repeat;
+      border-radius: 70%;
       background-size: contain;
       background-position: center;
       padding: 200px;
@@ -216,4 +217,18 @@ nav {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 10px;
+  }
+
+  .user-login-create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
