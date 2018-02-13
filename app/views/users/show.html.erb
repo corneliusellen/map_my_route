@@ -1,5 +1,11 @@
-<%= link_to "Logout", logout_path, method: "delete" %>
-<h1>Welcome <%= current_user.username %>!</h1>
-<p>Add Vehicle</p>
-<p>Add Station</p>
-<p>Create Route</p>
+<section class="welcome-user">
+  <article class="user-banner">
+    <h1>Welcome <%= current_user.username %>!</h1>
+    <h2>Where will you drive next?</h2>
+    <article class="create-links">
+      <%= link_to "Add Vehicle", new_vehicle_path, class: "button" %>
+      <%= link_to "Add Station", vehicles_path, class: "button" %>
+      <%= link_to "Create Route", vehicles_path, class: "button" %>
+    </article>
+  </article>
+</section>

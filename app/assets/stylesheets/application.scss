@@ -27,12 +27,22 @@ body {
   font-size: 20px;
 }
 
-.login {
+.logout {
   display: flex;
   justify-content: flex-end;
   padding: 5px;
   color: $color3;
-  font-size: 12px;
+  font-size: 14px;
+
+  a {
+    text-decoration: none;
+  }
+  a:visited {
+    color: $color3;
+  }
+  a:active {
+    color: $color4;
+  }
 }
 
 nav {
@@ -157,3 +167,53 @@ nav {
     }
   }
 }
+
+.welcome-user {
+  display: flex;
+  flex-direction: column;
+  .user-banner {
+    background: url("https://www.quickenloans.com/blog/wp-content/uploads/2015/05/Hybrid-Car.jpg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 200px;
+    margin: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+    .welcome-banner {
+      background: url("https://s1.cdn.autoevolution.com/images/news/manic-for-organic-a-guide-to-alternative-fuels-1879_1.jpg") no-repeat;
+      background-size: contain;
+      background-position: center;
+      padding: 200px;
+      margin: 20px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+    }
+    h1 {
+      color: $color1;
+      font-size: 40px;
+      text-shadow:  -1px 0 $color2, 0 1px $color2, 1px 0 $color2, 0 -1px $color2;
+    }
+    h2 {
+      color: $color2;
+      font-size: 40px;
+      text-shadow:  -2px 0 black, 0 2px black, 1px 0 black, 0 -2px black;
+    }
+  }
+
+  .create-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .welcome-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
