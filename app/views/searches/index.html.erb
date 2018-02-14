@@ -3,5 +3,5 @@
   <%= station.fuel_type %>
   <%= station.hours_operation %>
   Address: <%= station.street %>, <%= station.city %>, <%= station.state %>, <%= station.zip %>
-  <%= link_to "Favorite Station", {controller: "stations", action: :create, favorite_station: station.attributes}, method: :post %>
+  <%= link_to "Favorite Station", {controller: "favorites", action: :create, station_id: station.id, user_id: current_user.id}, method: :post %>
 <% end %>
