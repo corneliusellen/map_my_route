@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :vehicles
   resources :users, only: [:new, :create, :show]
   resources :stations, only: [:index]
+  resources :favorites, only: [:index, :create, :destroy]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

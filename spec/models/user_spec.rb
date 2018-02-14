@@ -1,6 +1,10 @@
 require 'rails_helper'
 
-describe User do
+describe User, type: :model do
+  describe "relationships" do
+    it {is_expected.to have_many(:stations).through(:favorites)}
+  end
+
   describe "roles" do
     it "can be created as an admin" do
       admin_user = User.create(username: "ellen", password: "123", role: 1)

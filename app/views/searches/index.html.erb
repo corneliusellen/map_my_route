@@ -1,0 +1,7 @@
+<% @stations.each do |station| %>
+  <%= station.name %>
+  <%= station.fuel_type %>
+  <%= station.hours_operation %>
+  Address: <%= station.street %>, <%= station.city %>, <%= station.state %>, <%= station.zip %>
+  <%= link_to "Favorite Station", {controller: "stations", action: :create, favorite_station: station.attributes}, method: :post %>
+<% end %>

@@ -7,4 +7,6 @@ class User < ApplicationRecord
   enum role: ["default", "admin"]
 
   has_many :vehicles
+  has_many :favorites
+  has_many :stations, through: :favorites
 end
