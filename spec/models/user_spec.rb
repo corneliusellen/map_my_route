@@ -15,7 +15,7 @@ describe User do
     end
 
     it "uniqueness of username" do
-      original = User.new(username: "doug", password: "lol")
+      original = User.create!(username: "doug", password: "lol")
       copy_cat = User.new(username: "doug", password: "123")
 
       expect(copy_cat).to_not be_valid
