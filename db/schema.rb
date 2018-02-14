@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214182544) do
+ActiveRecord::Schema.define(version: 20180214220100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "station_id"
+    t.index ["station_id"], name: "index_favorites_on_station_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "stations", force: :cascade do |t|
     t.string "fuel_type"
@@ -43,5 +50,7 @@ ActiveRecord::Schema.define(version: 20180214182544) do
     t.index ["user_id"], name: "index_vehicles_on_user_id"
   end
 
+  add_foreign_key "favorites", "stations"
+  add_foreign_key "favorites", "users"
   add_foreign_key "vehicles", "users"
 end

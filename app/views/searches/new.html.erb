@@ -1,0 +1,9 @@
+<%= form_tag searches_path, method: :get do %>
+  <%= label_tag "zip" %>
+  <%= text_field_tag :zip %>
+
+  <%= label_tag "Fuel Type" %>
+  <%= text_field_tag :type %>
+
+  <%= submit_tag "Find Fuel Stations" %>
+<% end %>
