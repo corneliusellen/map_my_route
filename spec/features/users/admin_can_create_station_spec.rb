@@ -43,20 +43,14 @@ describe "As an admin" do
   end
 end
 
-# describe "As a default user" do
-#   it "I cannot save or delete stations" do
-#     user = User.create(username: "ellen", password: "123")
-#     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-#
-#     visit user_path(user)
-#     click_on("Add Station")
-#
-#     expect(current_path).to eq(new_search_path)
-#     fill_in("zip", with: "80209")
-#     fill_in("type", with: "ELEC")
-#     click_on("Find Fuel Stations")
-#
-#     expect(current_path).to eq(searches_path)
-#     expect(page).to have_content("KEW REALTY")
-#   end
-# end
+describe "As a default user" do
+  it "I cannot save or delete stations" do
+    user = User.create(username: "ellen", password: "123")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit admin_user_path(user)
+
+    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(page).to_not have_content("Add Station")
+  end
+end
