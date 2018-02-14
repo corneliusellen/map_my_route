@@ -1,4 +1,4 @@
-class SearchesController < ApplicationController
+class Admin::SearchesController < Admin::BaseController
 
   def new
   end

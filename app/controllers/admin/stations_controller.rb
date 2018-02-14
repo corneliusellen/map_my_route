@@ -1,4 +1,4 @@
-class StationsController < ApplicationController
+class Admin::StationsController < Admin::BaseController
 
   def index
     @stations = Station.all
@@ -7,12 +7,12 @@ class StationsController < ApplicationController
   def create
     Station.create!(station_params)
     flash.notice = "Station was saved!"
-    redirect_to stations_path
+    redirect_to admin_stations_path
   end
 
   def destroy
     Station.find(params[:id]).destroy
-    redirect_to stations_path
+    redirect_to admin_stations_path
   end
 
   private

@@ -1,8 +1,0 @@
-<h2>Saved Stations:</h2>
-<% @stations.each do |station| %>
-  <%= station.attributes %>
-  <%= link_to "Delete Station", station_path(station), method: :delete %>
-  <br>
-<% end %>
-
-<%= link_to "Create more stations", new_search_path %>
