@@ -23,10 +23,22 @@ describe "As an admin" do
       expect(Station.all.count).to eq(1)
       expect(page).to have_content("Station was saved!")
     end
+  end
 
-    # click_on("Delete Station")
-    # expect(current_path).to eq(stations_path)
-    # expect(page).to_not have_content("KEW REALTY")
-    # expect(Station.all.count).to eq(0)
+  it "I can delete stations" do
+    admin = User.create(username: "ellen", password: "123", role: "admin")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit user_path(admin)
+    click_on("Add Station")
+    fill_in("zip", with: "80209")
+    fill_in("type", with: "ELEC")
+    click_on("Find Fuel Stations")
+    click_on("Save Station")
+    click_on("Delete Station")
+
+    expect(current_path).to eq(admin_stations_path)
+    expect(page).to_not have_content("KEW REALTY")
+    expect(Station.all.count).to eq(0)
   end
 end
