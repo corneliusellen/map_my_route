@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :searches, only: [:new, :index]
   resources :vehicles
   resources :users, only: [:new, :create, :show]
+  resources :stations, only: [:index]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
