@@ -1,6 +1,22 @@
 require 'rails_helper'
 
 describe User do
+  describe "roles" do
+    it "can be created as an admin" do
+      admin_user = User.create(username: "ellen", password: "123", role: 1)
+
+      expect(admin_user.role).to eq("admin")
+      expect(admin_user.admin?).to be_truthy
+    end
+
+    it "can be created as a default user" do
+      regular_user = User.create(username: "bob", password: "123")
+
+      expect(regular_user.role).to eq("default")
+      expect(regular_user.default?).to be_truthy
+    end
+  end
+
   describe "validates" do
     it "prescence of username" do
     user = User.new(password: "123")

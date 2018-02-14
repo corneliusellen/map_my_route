@@ -3,5 +3,5 @@
   <h3> <%= result.fuel_type %> </h3>
   <p> <%= result.hours_operation %> </p>
   Address: <%= result.street %>, <%= result.city %>, <%= result.state %>, <%= result.zip %>
-  <%= link_to "Save Station", {controller: "stations", action: :create, station: result.attributes}, method: :post %>
+  <%= link_to "Save Station", {controller: "admin/stations", action: :create, station: result.attributes}, method: :post %>
 <% end %>
