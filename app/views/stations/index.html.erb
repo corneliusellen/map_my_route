@@ -1,0 +1,7 @@
+<h2>Saved Stations:</h2>
+<% @stations.each do |station| %>
+  <%= station.attributes %>
+  <br>
+<% end %>
+
+<%= link_to "Create more stations", new_search_path %>

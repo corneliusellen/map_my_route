@@ -10,12 +10,18 @@ describe "user can search for fuel stations in a location" do
       click_on("Add Station")
 
       expect(current_path).to eq(new_search_path)
-      fill_in("City", with: "Denver")
-      fill_in("Fuel Type", with: "electric")
-      click_on("submit")
+      fill_in("zip", with: "80209")
+      fill_in("type", with: "ELEC")
+      click_on("Find Fuel Stations")
 
-      expect(current_path).to eq(search_path)
-      expect(page).to have_content("Not sure yet")
+      expect(current_path).to eq(searches_path)
+      expect(page).to have_content("KEW REALTY")
+
+      click_on("Save Station")
+
+      expect(current_path).to eq(stations_path)
+      expect(Station.all.count).to eq(1)
+      expect(page).to have_content("Station was saved!")
     end
   end
 end
