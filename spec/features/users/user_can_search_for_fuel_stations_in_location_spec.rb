@@ -22,6 +22,10 @@ describe "user can search for fuel stations in a location" do
       expect(current_path).to eq(stations_path)
       expect(Station.all.count).to eq(1)
       expect(page).to have_content("Station was saved!")
+
+      click_on("Delete Station")
+      expect(current_path).to eq(stations_path)
+      expect(page).to_not have_content("KEW REALTY")
     end
   end
 end

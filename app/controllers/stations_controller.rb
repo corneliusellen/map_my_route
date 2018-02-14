@@ -10,6 +10,11 @@ class StationsController < ApplicationController
     redirect_to stations_path
   end
 
+  def destroy
+    Station.find(params[:id]).destroy
+    redirect_to stations_path
+  end
+
   private
 
   def station_params
