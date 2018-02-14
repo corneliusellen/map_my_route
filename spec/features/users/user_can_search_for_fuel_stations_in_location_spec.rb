@@ -29,6 +29,7 @@ describe "user can search for fuel stations in a location and fuel type" do
 
       expect(page).to have_content("Station was favorited!")
       expect(current_path).to eq(favorites_path)
+      expect(page).to have_content("2785 Speer Apartments")
     end
   end
 end
