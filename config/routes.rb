@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :stations, only: [:index, :create, :destroy]
+    resources :searches, only: [:new, :index]
+    resources :users, only: [:show]
   end
 
-  resources :searches
+  resources :searches, only: [:new, :index]
   resources :vehicles
   resources :users, only: [:new, :create, :show]
 
