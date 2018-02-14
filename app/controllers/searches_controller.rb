@@ -13,6 +13,7 @@ class SearchesController < ApplicationController
     end
 
     response = @conn.get("/api/alt-fuel-stations/v1.json?fuel_type=#{type}&zip=#{zip}")
+
     @stations = JSON.parse(response.body, symbolize_names: true)[:fuel_stations]
 
     @search_results = @stations.map do |station|
