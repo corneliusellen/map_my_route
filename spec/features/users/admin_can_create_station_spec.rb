@@ -44,7 +44,7 @@ describe "As an admin" do
 end
 
 describe "As a default user" do
-  it "I cannot save or delete stations" do
+  it "I view admin welcome page" do
     user = User.create(username: "ellen", password: "123")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -52,5 +52,24 @@ describe "As a default user" do
 
     expect(page).to have_content("The page you were looking for doesn't exist.")
     expect(page).to_not have_content("Add Station")
+  end
+
+  it "I cannot view admin search path" do
+    user = User.create(username: "ellen", password: "123")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit new_admin_search_path
+
+    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(page).to_not have_content("Find Fuel Stations")
+  end
+
+  it "I cannot save or delete stations" do
+    user = User.create(username: "ellen", password: "123")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit admin_stations_path
+
+    expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 end
