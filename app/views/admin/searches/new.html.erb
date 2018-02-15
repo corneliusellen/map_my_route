@@ -1,7 +1,5 @@
-<div class="logout">
-  <%= link_to "Logout", logout_path, method: "delete" %>
-</div>
-<h2 class="search-header">Search Stations by Fuel Type and Zip Code: </h2>
+<%= render "../views/admin_navigation" %>
+<h2 class="search-header">Search Stations: </h2>
 
 <div class="search-form">
   <%= form_tag admin_searches_path, method: :get do %>
