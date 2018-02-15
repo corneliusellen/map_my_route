@@ -11,7 +11,7 @@
   </div>
   <div class="field">
     <%= label_tag "Fuel Type:" %>
-    <%= text_field_tag :type %>
+    <%= select_tag :type, options_for_select(fuel_types) %>
   </div>
   <div class="button-container">
     <%= submit_tag "Find Fuel Stations", class: "button" %>
