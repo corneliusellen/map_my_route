@@ -4,15 +4,15 @@ class Admin::SearchesController < Admin::BaseController
   end
 
   def index
-    zip = params[:zip]
-    type = params[:type]
+    @zip = params[:zip]
+    @type = params[:type]
 
     @conn = Faraday.new(url: "https://developer.nrel.gov") do |faraday|
       faraday.headers["X-API-KEY"] = "JFoTidypmszSMKMU7eFwFgAkQhTE94t3di13d2Vc"
       faraday.adapter Faraday.default_adapter
     end
 
-    response = @conn.get("/api/alt-fuel-stations/v1.json?fuel_type=#{type}&zip=#{zip}")
+    response = @conn.get("/api/alt-fuel-stations/v1.json?fuel_type=#{@type}&zip=#{@zip}")
 
     @stations = JSON.parse(response.body, symbolize_names: true)[:fuel_stations]
 

@@ -1,8 +1,21 @@
-<h2>Saved Stations:</h2>
-<% @stations.each do |station| %>
-  <%= station.attributes %>
-  <%= link_to "Delete Station", admin_station_path(station), method: :delete %>
+<div class="logout">
+  <%= link_to "Logout", logout_path, method: "delete" %>
+</div>
+<div class="stations-headers">
+  <%= link_to "Add More Stations", new_admin_search_path %>
+  <h2 class="saved-stations">Saved Stations</h2>
   <br>
-<% end %>
-
-<%= link_to "Create more stations", new_admin_search_path %>
+</div>
+<div class="stations-grid">
+  <% @stations.each do |station| %>
+    <div class="stations-list">
+      <%= image_tag "gas_station_icon.png" %><br>
+      <%= station.fuel_type %><br>
+      <%= station.name %><br>
+      <%= station.zip %><br>
+      <br>
+      <%= link_to "Delete Station", admin_station_path(station), method: :delete, class: "small-button" %>
+      <br>
+    </div>
+  <% end %>
+</div>

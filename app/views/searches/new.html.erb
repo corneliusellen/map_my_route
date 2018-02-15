@@ -1,9 +1,18 @@
-<%= form_tag searches_path, method: :get do %>
-  <%= label_tag "zip" %>
-  <%= text_field_tag :zip %>
+<%= render "../views/navigation" %>
+<h2 class="search-header">Search Stations by Fuel Type and Zip Code: </h2>
 
-  <%= label_tag "Fuel Type" %>
-  <%= text_field_tag :type %>
-
-  <%= submit_tag "Find Fuel Stations" %>
-<% end %>
+<div class="search-form">
+  <%= form_tag searches_path, method: :get do %>
+    <div class="field">
+      <%= label_tag "zip" %>
+      <%= text_field_tag :zip %>
+    </div>
+    <div class="field">
+        <%= label_tag "Fuel Type" %>
+        <%= text_field_tag :type %>
+    </div>
+    <div class="button-container">
+        <%= submit_tag "Find Fuel Stations", class: "button" %>
+    </div>
+  <% end %>
+</div>
