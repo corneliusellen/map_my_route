@@ -32,6 +32,15 @@ body {
   font-size: 20px;
 }
 
+#welcome-text {
+  color: $color1;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20%;
+  text-align: center;
+  max-width: 300px;
+  padding: 20px;
+}
+
 .logout {
   display: flex;
   justify-content: flex-end;
@@ -214,6 +223,7 @@ nav {
     .welcome-banner {
       background: url("https://s1.cdn.autoevolution.com/images/news/manic-for-organic-a-guide-to-alternative-fuels-1879_1.jpg") no-repeat;
       border-radius: 70%;
+      opacity: 0.5;
       background-size: contain;
       background-position: center;
       padding: 200px;
@@ -221,8 +231,11 @@ nav {
       height: 100px;
       display: flex;
       flex-direction: column;
-      align-content: space-between;
+      align-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
     }
+
     h1 {
       color: $color1;
       font-size: 40px;
@@ -341,4 +354,9 @@ nav {
     color: $color4;
     padding: 30px;
     text-align: center;
+  }
+
+  .add-station {
+    align-self: flex-end;
+    margin-right: 20px;
   }
