@@ -17,12 +17,12 @@ describe "user can create new vehicle" do
         fill_in('Model', with: 'Bolt')
         fill_in('Year', with: 2017)
         fill_in('Mpg', with: 45)
-        fill_in('Fuel', with: 'electric')
+        select("Electric", from: :Fuel)
         click_button('Create')
 
         expect(current_path).to eq(vehicles_path)
         expect(page).to have_content("Chevy")
-        expect(page).to have_content("electric")
+        expect(page).to have_content("ELEC")
         expect(Vehicle.all.count).to eq(1)
       end
     end
