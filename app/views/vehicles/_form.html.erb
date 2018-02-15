@@ -12,7 +12,7 @@
   <%= f.number_field :mpg %>
 
   <%= f.label :fuel %>
-  <%= f.text_field :fuel %>
+  <%= f.select :fuel, options_for_select(fuel_types) %>
 
   <%= f.submit %>
 <% end %>

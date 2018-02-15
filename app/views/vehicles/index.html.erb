@@ -1,7 +1,7 @@
 <%= render "../views/navigation" %>
 
 <section class="header-title">
-  <h2>My Vehicles (<%= Vehicle.count %>)</h2>
+  <h2>My Vehicles (<%= current_user.vehicles.count %>)</h2>
 </section>
 
 <section class="new">
