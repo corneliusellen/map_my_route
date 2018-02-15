@@ -18,8 +18,8 @@ describe "user can search for fuel stations in a location and fuel type" do
 
       expect(current_path).to eq(new_search_path)
 
-      fill_in("type", with: "ELEC")
       fill_in("zip", with: "80211")
+      select("Electric", from: :type)
       click_on("Find Fuel Stations")
 
       expect(page).to have_content("2785 Speer Apartments")
