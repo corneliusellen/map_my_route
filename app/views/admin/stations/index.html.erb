@@ -1,9 +1,11 @@
-<div class="logout">
-  <%= link_to "Logout", logout_path, method: "delete" %>
-</div>
+<%= render "../views/admin_navigation" %>
+
+<section class="header-title">
+  <h2>Saved Stations</h2>
+</section>
+
 <div class="stations-headers">
   <%= link_to "Add More Stations", new_admin_search_path %>
-  <h2 class="saved-stations">Saved Stations</h2>
   <br>
 </div>
 <div class="stations-grid">

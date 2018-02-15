@@ -1,9 +1,9 @@
 <header>
-  <div class="logout">
-    <%= link_to "Logout", logout_path, method: "delete" %>
-  </div>
   <nav>
     <ul>
+      <li><%= link_to user_path(current_user) do %>
+        <div>Home</div>
+      <% end %></li>
       <li><%= link_to vehicles_path do %>
         <div>My Vehicles</div>
       <% end %></li>
@@ -11,6 +11,9 @@
         <div>My Stations</div>
       <% end %></li>
       <li>My Routes</li>
+      <li><%= link_to logout_path, method: "delete" do %>
+        <div>Logout</div>
+      <% end %></li>
     </ul>
   </nav>
 </header>
