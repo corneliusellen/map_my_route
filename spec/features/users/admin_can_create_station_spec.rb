@@ -7,11 +7,11 @@ describe "As an admin" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit admin_user_path(admin)
-      click_on("Find Stations")
+      click_on("Add Stations")
 
       expect(current_path).to eq(new_admin_search_path)
       fill_in("zip", with: "80209")
-      fill_in("type", with: "ELEC")
+      select("Electric", from: :type)
       click_on("Find Fuel Stations")
 
       expect(current_path).to eq(admin_searches_path)
@@ -30,9 +30,9 @@ describe "As an admin" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit admin_user_path(admin)
-    click_on("Find Stations")
+    click_on("Add Stations")
     fill_in("zip", with: "80209")
-    fill_in("type", with: "ELEC")
+    select("Electric", from: :type)
     click_on("Find Fuel Stations")
     click_on("Save Station")
     click_on("Delete Station")

@@ -4,7 +4,9 @@ class SearchesController < ApplicationController
   end
 
   def index
-    @stations = Station.where(fuel_type: params[:type], zip: params[:zip])
+    @type = params[:type]
+    @zip = params[:zip]
+    @stations = Station.where(fuel_type: @type, zip: @zip)
   end
 
 end

@@ -21,10 +21,24 @@ $color4: rgba(23, 123, 237, 1);
 $color5: rgba(14, 74, 142, 1);
 $font-stack: Helvetica, sans-serif;
 
+.flash {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   background-color: $color2;
   font-family: 'Cairo', sans-serif;
   font-size: 20px;
+}
+
+#welcome-text {
+  color: $color1;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20%;
+  text-align: center;
+  max-width: 300px;
+  padding: 20px;
 }
 
 .logout {
@@ -90,6 +104,7 @@ nav {
   background-color: $color3;
   color: $color1;
   border-radius: 5%;
+  text-align: center;
 }
 
 .button:link {
@@ -99,6 +114,29 @@ nav {
   background-color: $color5;
 }
 .button:active {
+  background-color: $color4;
+  color: $color3;
+}
+
+.big-button {
+  margin-top: 10px;
+  margin-right: 20px;
+  padding: 20px;
+  font-size: 30px;
+  background-color: $color3;
+  color: $color1;
+  border-radius: 5%;
+  min-width: 200px;
+  text-align: center;
+}
+
+.big-button:link {
+  text-decoration: none;
+}
+.big-button:hover {
+  background-color: $color5;
+}
+.big-button:active {
   background-color: $color4;
   color: $color3;
 }
@@ -185,6 +223,7 @@ nav {
     .welcome-banner {
       background: url("https://s1.cdn.autoevolution.com/images/news/manic-for-organic-a-guide-to-alternative-fuels-1879_1.jpg") no-repeat;
       border-radius: 70%;
+      opacity: 0.5;
       background-size: contain;
       background-position: center;
       padding: 200px;
@@ -192,8 +231,11 @@ nav {
       height: 100px;
       display: flex;
       flex-direction: column;
-      align-content: space-between;
+      align-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
     }
+
     h1 {
       color: $color1;
       font-size: 40px;
@@ -231,4 +273,90 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .stations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    img {
+      max-width: 150px;
+    }
+
+    .stations-list {
+      max-width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+  }
+
+  .saved-stations {
+    font-size: 30px;
+    color: $color4;
+    margin-bottom: 20px;
+  }
+
+  .stations-headers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      padding: 20px;
+      background-color: $color3;
+      color: $color1;
+      border-radius: 5%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 22px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    a:hover {
+      background-color: $color5;
+      color: $color3;
+    }
+    a:visited {
+      color: $color1;
+    }
+    a:active {
+      color: $color3;
+    }
+  }
+
+  .small-button {
+    background-color: $color3;
+    color: $color1;
+    border-radius: 5%;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .small-button:hover {
+    background-color: $color5;
+  }
+  .small-button:visited {
+    color: $color1;
+  }
+  .small-button:active {
+    color: $color3;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-header {
+    font-size: 40px;
+    color: $color4;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .add-station {
+    align-self: flex-end;
+    margin-right: 20px;
   }

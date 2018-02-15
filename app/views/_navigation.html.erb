@@ -5,8 +5,11 @@
   <nav>
     <ul>
       <li><%= link_to vehicles_path do %>
-      <div>My Vehicles</div><% end %></li>
-      <li>My Stations</li>
+        <div>My Vehicles</div>
+      <% end %></li>
+      <li> <%= link_to favorites_path do %>
+        <div>My Stations</div>
+      <% end %></li>
       <li>My Routes</li>
     </ul>
   </nav>

@@ -1,9 +1,20 @@
-<%= form_tag admin_searches_path, method: :get do %>
-  <%= label_tag "zip" %>
-  <%= text_field_tag :zip %>
+<div class="logout">
+  <%= link_to "Logout", logout_path, method: "delete" %>
+</div>
+<h2 class="search-header">Search Stations by Fuel Type and Zip Code: </h2>
 
-  <%= label_tag "Fuel Type" %>
-  <%= text_field_tag :type %>
-
-  <%= submit_tag "Find Fuel Stations" %>
-<% end %>
+<div class="search-form">
+  <%= form_tag admin_searches_path, method: :get do %>
+  <div class="field">
+    <%= label_tag "Zip:" %>
+    <%= text_field_tag :zip %>
+  </div>
+  <div class="field">
+    <%= label_tag "Fuel Type:" %>
+    <%= select_tag :type, options_for_select(fuel_types) %>
+  </div>
+  <div class="button-container">
+    <%= submit_tag "Find Fuel Stations", class: "button" %>
+  </div>
+  <% end %>
+</div>

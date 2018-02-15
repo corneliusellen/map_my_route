@@ -1,13 +1,11 @@
-<%= render "../views/navigation" %>
+<%= render "../views/admin_navigation" %>
 
 <section class="welcome-user">
   <article class="user-banner">
     <h1>Welcome <%= current_user.username %>!</h1>
-    <h2>Where will you drive next?</h2>
+    <br>
     <article class="create-links">
-      <%= link_to "Add Vehicle", new_vehicle_path, class: "button" %>
-      <%= link_to "Find Stations", new_admin_search_path, class: "button" %>
-      <%= link_to "Create Route", vehicles_path, class: "button" %>
+      <%= link_to "Add Stations", new_admin_search_path, class: "big-button" %>
     </article>
   </article>
 </section>

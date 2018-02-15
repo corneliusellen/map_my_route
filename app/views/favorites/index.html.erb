@@ -1,3 +1,20 @@
-<% current_user.stations.each do |station| %>
-  <%= station.name %>
-<% end %>
+<%= render "../views/navigation" %>
+<br>
+<div class="stations-headers">
+  <%= link_to "Add Station", new_search_path, class: "add-station" %>
+  <h2 class="saved-stations">Favorited Stations</h2>
+</div>
+<br>
+
+<div class="stations-grid">
+  <% current_user.stations.each do |station| %>
+    <div class="stations-list">
+      <%= image_tag "gas_station_icon.png" %><br>
+      <h2><%= station.name %></h2>
+      <h3><%= station.fuel_type %></h3>
+      <p><%= station.hours_operation %></p>
+      Address: <%= station.street %>, <%= station.city %>, <%= station.state %>, <%= station.zip %> <br> <br>
+      <%= link_to "Unfavorite", favorite_path(station), method: :delete, class: "small-button" %>
+    </div>
+  <% end %>
+</div>
