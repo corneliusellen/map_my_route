@@ -1,5 +1,7 @@
 <%= render "../views/admin_navigation" %>
-<h2 class="search-header">Stations in <%= @zip %> serving <%= fuel_types.key(@type) %></h2>
+<section class="header-title">
+  <h2>Stations in <%= @zip %> serving <%= fuel_types.key(@type) %></h2>
+</section>
 
 <div class="stations-grid">
   <% @search_results.each do |result| %>
